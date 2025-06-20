@@ -9,29 +9,36 @@ dotenv.config();
 
 import express from 'express';
 import { join } from 'node:path';
+import router from './app/API/routes/climaRoute';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
 const app = express();
 const angularApp = new AngularNodeAppEngine();
 
-// const ApiKey = environment.API_KEY
+// const apiKey =  process.env['API_KEY'];
 
-/**
- * Example Express Rest API endpoints can be defined here.
- * Uncomment and define endpoints as necessary.
- *
- * Example:
- * ```ts
- * app.get('/api/{*splat}', (req, res) => {
- *   // Handle API request
- * });
- * ```
- */
+app.use(router)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * Serve static files from /browser
  */
+
 app.use(
   express.static(browserDistFolder, {
     maxAge: '1y',
@@ -63,8 +70,7 @@ if (isMainModule(import.meta.url)) {
       throw error;
     }
 
-    console.log(`Node Express server listening on http://localhost:${port}`);
-    console.log('API_KEY:', process.env['API_KEY']);
+    console.log(`Node Express server listening on http://localhost:${port}`);    
 
   });
 }

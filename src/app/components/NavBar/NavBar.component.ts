@@ -1,10 +1,9 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { MatInputModule } from '@angular/material/input'
 import { MatFormFieldModule} from '@angular/material/form-field';
 import {  MatIconModule} from '@angular/material/icon'
-
-import { Search} from 'lucide-angular';
+import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -14,7 +13,23 @@ import { Search} from 'lucide-angular';
   styleUrl: './NavBar.component.css',  
   
 })
+
 export class NavBarComponent {
   
-  Search = Search; 
+  constructor(){
+    console.log("Cargo NavBar")
+    // this.prueba()
+  }
+
+  http = inject(HttpClient)
+
+  Ciudad$  = this.http.get('/clima/Test1')
+
+  // prueba(){
+  //   this.http.get('/clima/Test1')
+  //            .subscribe(datos => {
+  //                 console.log(datos)
+  //   })
+  // }
+
  }
