@@ -1,10 +1,10 @@
 import { Router } from "express";
-import { ClimaCiudad } from "../controller/climaController";
+import { ClimaPorCiudad } from "../controller/climaController";
 
 
 const router = Router()
 
 
-router.get('/clima/:ciudad', ClimaCiudad)
+router.get('/clima/:ciudad_id', ClimaPorCiudad)
 
 export default router;

@@ -18,18 +18,18 @@ export class NavBarComponent {
   
   constructor(){
     console.log("Cargo NavBar")
-    // this.prueba()
+    let datos  = this.prueba()
   }
 
   http = inject(HttpClient)
 
-  Ciudad$  = this.http.get('/clima/Test1')
+  
 
-  // prueba(){
-  //   this.http.get('/clima/Test1')
-  //            .subscribe(datos => {
-  //                 console.log(datos)
-  //   })
-  // }
+   prueba(){
+     this.http.get('/clima/Test1')
+              .subscribe(datos => {
+                   console.log(datos)
+     })
+   }
 
  }
