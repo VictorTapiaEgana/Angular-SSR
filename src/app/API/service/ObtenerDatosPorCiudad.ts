@@ -3,9 +3,7 @@ import { DatosCiudadType } from "../types/DatosDeLaCiudadType"
 export async function ObtenerDatosPorCiudad(ciudad_id:string):Promise<DatosCiudadType | null>{
 
     const API_KEY = process.env['API_KEY']
-    const URL_BASE=process.env['URL_CLIMA']
-
-    console.log(API_KEY,URL_BASE)
+    const URL_BASE=process.env['URL_CLIMA']    
 
     const params = new URLSearchParams({
                        place_id: ciudad_id,
