@@ -1,3 +1,9 @@
+export interface DatosCiudadResponseType {
+    status:string;
+    data:DatosCiudadType;
+    message:string
+}
+
 export interface DatosCiudadType {
     lat: string;
     lon: string;

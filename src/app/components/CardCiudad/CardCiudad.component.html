@@ -3,16 +3,14 @@
     <section class="flex flex-col gap-2 mb-4">
 
         <section class=" flex justify-between">
-            <span class="text-3xl">Madrid </span>
-            <mat-icon  style="
-                             font-size: 3.5rem;
-                             position: relative;
-                             left: -30px;
-                             line-height: 1;
-                             overflow: visible;
-                             display: inline-block;
-                            "
-            >filter_drama</mat-icon>
+            <span class="text-3xl">Coquimbo </span>
+
+            @defer (when DatosCiudad()?.data?.current?.icon_num) {
+                <img [src]="'/weather_icons/weather_icons/set04/big/' + DatosCiudad()?.data?.current?.icon_num + '.png'"
+                     [alt]="'Icono clima' + DatosCiudad()?.data?.current?.icon"
+                     class="w-18 h-18 inline-block absolute left-[200px]" />
+            }            
+
         </section>
         
         <span>España</span>

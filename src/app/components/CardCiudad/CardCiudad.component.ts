@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider'
 import { MatIconModule }  from '@angular/material/icon'
+import { DatosCiudadResponseType } from '../../API/types/DatosDeLaCiudadType';
 
 @Component({
   selector: 'app-card-ciudad',
@@ -8,4 +9,6 @@ import { MatIconModule }  from '@angular/material/icon'
   templateUrl: './CardCiudad.component.html',
   styleUrl: './CardCiudad.component.css',
 })
-export class CardCiudadComponent { }
+export class CardCiudadComponent {
+  DatosCiudad =  input.required<DatosCiudadResponseType | undefined >() 
+ }
