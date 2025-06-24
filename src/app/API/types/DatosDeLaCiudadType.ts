@@ -4,6 +4,12 @@ export interface DatosCiudadResponseType {
     message:string
 }
 
+export interface DatosCiudadConNombreResponseType extends DatosCiudadResponseType {
+    status: string;
+    data: DatosCiudadConNombreType;
+    message: string;
+}
+
 export interface DatosCiudadType {
     lat: string;
     lon: string;
@@ -14,6 +20,12 @@ export interface DatosCiudadType {
     hourly: Hourly;
     daily: Daily;
 }
+
+export interface DatosCiudadConNombreType extends DatosCiudadType{
+    ciudad:string
+}
+
+
 
 export interface Wind {
     speed: number;

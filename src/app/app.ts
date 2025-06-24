@@ -4,6 +4,7 @@ import { NavBarComponent } from "./components/NavBar/NavBar.component";
 import { CardCiudadComponent } from "./components/CardCiudad/CardCiudad.component";
 import { BuscarCiudadService } from './services/buscarCiudad.service';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { TranslateServiceService } from './services/translateService.service';
 
 @Component({
   selector: 'app-root',
@@ -16,11 +17,12 @@ export class App {
 
   ciudadService = inject(BuscarCiudadService)
 
+
   //TODO: Habilitar localStorage para la guardar la ultima ciudad buscada
   //      y cargarla al iniciar la siguiente vez
 
-  DatosCiudad = toSignal(this.ciudadService.buscar('coquimbo'))  
-
+  // DatosCiudad = toSignal(this.ciudadService.buscar('coquimbo'))  
+  DatosCiudad = toSignal(this.ciudadService.buscar('coquimbo'), { initialValue: undefined });
   
 }
 

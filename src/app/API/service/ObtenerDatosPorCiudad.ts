@@ -1,17 +1,18 @@
+import { ClimaPorCiudadType } from "../types/DatosDeLaCiudadPorDiasType"
 import { DatosCiudadType } from "../types/DatosDeLaCiudadType"
 
-export async function ObtenerDatosPorCiudad(ciudad_id:string):Promise<DatosCiudadType | null>{
+export async function ObtenerDatosPorCiudad(ciudad_id:string):Promise<ClimaPorCiudadType | null>{
 
     const API_KEY = process.env['API_KEY']
     const URL_BASE=process.env['URL_CLIMA']    
 
     const params = new URLSearchParams({
-                       place_id: ciudad_id,
-                       sections: 'all',
-                       language: 'en',
-                       units: 'metric',
-                       key: 'nwgrfuk6tjqmcuq0g83nu0yhzx3j6x7pv0ouc9p7'
-                       })
+                                        place_id: ciudad_id,
+                                        sections: 'daily',
+                                        language: 'en',
+                                        units: 'metric',
+                                        key: `${API_KEY}`
+                                      })
 
     const URLCOMPLETE = `${URL_BASE}/point?${params.toString()}` 
     

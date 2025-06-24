@@ -4,18 +4,19 @@
 
         <section class=" flex justify-between">
             <span class="text-3xl">Coquimbo </span>
-
-            @defer (when DatosCiudad()?.data?.current?.icon_num) {
-                <img [src]="'/weather_icons/weather_icons/set04/big/' + DatosCiudad()?.data?.current?.icon_num + '.png'"
-                     [alt]="'Icono clima' + DatosCiudad()?.data?.current?.icon"
+            
+            @defer (when DatosCiudad() ) {
+                <img [src]="'/weather_icons/weather_icons/set04/big/' + DatosCiudad()?.data?.daily?.data?.[0]?.icon + '.png'"
+                     [alt]="'Imagen de clima ' + DatosCiudad()?.data?.daily?.data?.[0]?.weather "datosciudaddatosciudad
                      class="w-18 h-18 inline-block absolute left-[200px]" />
             }            
 
         </section>
         
         <span>España</span>
-        <span class="text-7xl">24° c</span>
-        <span>Parcialmente Nublado</span>
+        <span class="text-7xl"> {{DatosCiudad()?.data?.daily?.data?.[0]?.all_day?.temperature_max }}°c</span>        
+        <span> {{ traduccionSummary()?.data }}</span>            
+        
 
     </section>
 
@@ -29,8 +30,8 @@
                     <mat-icon>water_drop</mat-icon>
                 </section>
                 <section class="flex flex-col">
-                    <span>Humedad:</span>
-                    <span>65%</span>
+                    <span>Lluvia:</span>
+                    <span>{{ DatosCiudad()?.data?.daily?.data?.[0]?.all_day?.precipitation?.total  }} % </span>
                 </section>
             </span>
             <span class="flex items-center gap-2 w-1/2 justify-start">
@@ -38,8 +39,8 @@
                     <mat-icon>air</mat-icon>
                 </section>
                 <section class="flex flex-col">
-                    <span>Viento:12</span>
-                    <span>Km/h</span>
+                    <span>Viento:</span>
+                    <span>{{  DatosCiudad()?.data?.daily?.data?.[0]?.all_day?.wind?.speed }} Km/h</span>
                 </section>
             </span>
         </section>
@@ -51,17 +52,17 @@
                     <mat-icon>visibility</mat-icon>
                 </section>
                 <section class="flex flex-col">
-                    <span>Visibilidad:10</span>
-                    <span>Km</span>
+                    <span>Nubosidad:</span>
+                    <span>{{ DatosCiudad()?.data?.daily?.data?.[0]?.all_day?.cloud_cover?.total }} %</span>
                 </section>
             </span>
             <span class="flex items-center gap-2 w-1/2 justify-start">
                 <section>
-                    <mat-icon>wb_sunny</mat-icon>
+                    <mat-icon>thermostat</mat-icon>
                 </section>
                 <section class="flex flex-col">
-                    <span>UV:6</span>
-                    <!-- <span>Km/h</span> -->
+                    <span>T° Promedio</span>
+                    <span>{{ DatosCiudad()?.data?.daily?.data?.[0]?.all_day?.temperature }} °c</span>
                 </section>
             </span>
         </section>

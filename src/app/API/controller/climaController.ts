@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { ObtenerDatosPorCiudad } from "../service/ObtenerDatosPorCiudad";
 import { DatosCiudadType } from "../types/DatosDeLaCiudadType";
+import { ClimaPorCiudadType } from "../types/DatosDeLaCiudadPorDiasType";
 
 export const ClimaPorCiudad = async (req: Request, res: Response) => {
 
@@ -8,7 +9,7 @@ export const ClimaPorCiudad = async (req: Request, res: Response) => {
 
   try {
 
-    const DatosDeLaCiudad:DatosCiudadType | null =  await ObtenerDatosPorCiudad( ciudad_id)  
+    const DatosDeLaCiudad:ClimaPorCiudadType | null =  await ObtenerDatosPorCiudad( ciudad_id)  
     
     if (!DatosDeLaCiudad){
        res.status(404).json({
