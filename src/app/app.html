@@ -1,3 +1,12 @@
 <app-nav-bar />
-<app-card-ciudad  [DatosCiudad]="DatosCiudad()"/>
+
+<section class="flex flex-col lg:flex-row justify-between p-1 sm:p-10 w-full gap-5">
+    <app-card-ciudad  [DatosCiudad]="DatosCiudad()"/>
+    
+    <section class="flex-1 p-1">
+        <app-news-container />
+    </section>
+
+</section>
+
 <router-outlet />

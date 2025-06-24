@@ -12,6 +12,7 @@ import express from 'express';
 import { join } from 'node:path';
 // Rutas
 import router from './app/API/routes/climaRoute';
+import newsRoute from './app/API/routes/newsRoute';
 
 const browserDistFolder = join(import.meta.dirname, '../browser');
 
@@ -23,6 +24,7 @@ const angularApp = new AngularNodeAppEngine();
 
 
 app.use(router)
+app.use(newsRoute)
 
 
 

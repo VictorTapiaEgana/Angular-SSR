@@ -5,10 +5,12 @@ import { CardCiudadComponent } from "./components/CardCiudad/CardCiudad.componen
 import { BuscarCiudadService } from './services/buscarCiudad.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslateServiceService } from './services/translateService.service';
+import { NewsContainer } from "./components/news-container/news-container";
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NavBarComponent, CardCiudadComponent],
+  imports: [RouterOutlet, NavBarComponent, CardCiudadComponent, NewsContainer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

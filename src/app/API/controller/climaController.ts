@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
 import { ObtenerDatosPorCiudad } from "../service/ObtenerDatosPorCiudad";
-import { DatosCiudadType } from "../types/DatosDeLaCiudadType";
 import { ClimaPorCiudadType } from "../types/DatosDeLaCiudadPorDiasType";
 
 export const ClimaPorCiudad = async (req: Request, res: Response) => {

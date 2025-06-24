@@ -2,13 +2,13 @@
 
     <section class="flex flex-col gap-2 mb-4">
 
-        <section class=" flex justify-between">
+        <section class=" flex justify-between relative">
             <span class="text-3xl">Coquimbo </span>
             
             @defer (when DatosCiudad() ) {
                 <img [src]="'/weather_icons/weather_icons/set04/big/' + DatosCiudad()?.data?.daily?.data?.[0]?.icon + '.png'"
                      [alt]="'Imagen de clima ' + DatosCiudad()?.data?.daily?.data?.[0]?.weather "datosciudaddatosciudad
-                     class="w-18 h-18 inline-block absolute left-[200px]" />
+                     class="w-18 h-18 inline-block absolute left-[170px]" />
             }            
 
         </section>
