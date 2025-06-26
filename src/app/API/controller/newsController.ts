@@ -1,8 +1,9 @@
 import { Request, Response } from "express";
 import obtenerNoticias from "../service/obtenerNoticias";
+import { NewsApiResponse } from "../types/NoticiasResponseType";
 
 
-export const  NewsController = async (req: Request,res:Response):Promise<any> =>{
+export const  NewsController = async (req: Request,res:Response) =>{
 
     const { origen } = req.params
 
@@ -10,11 +11,7 @@ export const  NewsController = async (req: Request,res:Response):Promise<any> =>
 
         const resp = await obtenerNoticias(origen)
 
-        res.status(200).json( resp )
-                            //    status:200,
-                            //    data:resp,
-                            //    message:'Datos obtenidos Exitosamente'     
-        // })
+        res.status(200).json(resp)                        
         
     } catch (error) {
         
@@ -24,8 +21,5 @@ export const  NewsController = async (req: Request,res:Response):Promise<any> =>
                               message: error instanceof Error ? error.message : 'Error del servidor'
         })
     }
-    
-
 
 }
-

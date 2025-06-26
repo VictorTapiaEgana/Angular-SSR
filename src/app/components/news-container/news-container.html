@@ -1,4 +1,29 @@
-<section class="grid grid-cols-1 gap-6 px-5 rounded-2xl ">
+<section class="grid grid-cols-1 px-5 rounded-2xl grid-row">
+   
+
+    <section class="flex flex-col justify-center items-center gap-2 mb-5">
+
+        <section class="text-white flex align-middle text-2xl">            
+            <span class="text-black font-bold">Noticias Internacionales</span>
+        </section>
+
+        <section class="flex gap-3">
+            <button matFab (click)="paginaAnterior()">
+                <mat-icon>arrow_back_ios</mat-icon>
+            </button>
+
+            <section class="flex items-center justify-center align-middle">
+                <span style="background-color: #d7e3ff;" class="p-2 border-1 border-blue-300 rounded-md"> 1 </span>
+                <span class="mx-2">de</span>
+                <span style="background-color: #d7e3ff;" class="p-2 border-1 border-blue-300 rounded-md"> 5 </span>
+            </section>
+
+            <button matFab (click)="paginaSiguiente()">
+                <mat-icon>arrow_forward_ios</mat-icon>
+            </button>      
+        </section>  
+
+    </section>
     
     <app-news-card [recursoNoticias]="recursoNoticias"/>
 

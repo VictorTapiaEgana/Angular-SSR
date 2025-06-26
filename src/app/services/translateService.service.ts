@@ -14,7 +14,7 @@ export class TranslateServiceService {
 
   traducirSummary(cadena:string):Observable<traduccionType> {
        
-    return this.http.get<traduccionType>(`/traducir/${cadena}`)
+    return this.http.get<traduccionType>(`/traducir/${encodeURIComponent(cadena)}`)
 
   }
 

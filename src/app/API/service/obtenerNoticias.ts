@@ -2,12 +2,12 @@ import { NewsApiResponse } from "../types/NoticiasResponseType"
 
 export default async function obtenerNoticias(origen:string):Promise<NewsApiResponse | undefined> {
 
-    const API_NOTICIAS =  process.env['API_NOTICIAS']       
+    const API_NOTICIAS = process.env['API_NOTICIAS']       
     const URL_NOTICIAS = process.env['URL_NOTICIAS']    
     
     const params = new URLSearchParams({
         apikey: API_NOTICIAS!,                
-        // country: 'cl',          
+        country: origen === 'chile'  ? 'cl' : 'us,gb',          
         language: 'es', 
     });
 
@@ -22,7 +22,7 @@ export default async function obtenerNoticias(origen:string):Promise<NewsApiResp
         
     } catch (error) {
 
-        return undefined    
+        return  undefined
     } 
     
 }

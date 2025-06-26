@@ -12,7 +12,7 @@ import { NewsApiResponse } from '../../../API/types/NoticiasResponseType';
 
 export class NewsCard{
 
-  recursoNoticias = input.required<HttpResourceRef<NewsApiResponse >>();   
+  recursoNoticias = input.required<HttpResourceRef<NewsApiResponse | undefined >>();   
 
 
 }
